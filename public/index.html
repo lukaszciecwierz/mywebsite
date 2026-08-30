@@ -1,0 +1,97 @@
+<!DOCTYPE html>  
+<html lang="pl">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>CIO Portfolio - Cloud & AI Lab</title>  
+    <script src="https://cdn.tailwindcss.com"></script>  
+</head>  
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen">  
+    <div class="max-w-5xl mx-auto px-6 py-12">  
+        <!-- Header / Hero Section -->  
+        <header class="mb-16 text-center lg:text-left">  
+            <h1 class="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-teal-400 to-cyan-500 bg-clip-text text-transparent">  
+                Łukasz | CIO & IT Executive  
+            </h1>  
+            <p class="mt-4 text-lg text-slate-400 max-w-2xl">  
+                Projektuję i wdrażam nowoczesne architektury chmurowe oraz systemy orkiestracji AI, które automatyzują procesy biznesowe i eliminują dług technologiczny.  
+            </p>  
+        </header>  
+  
+        <!-- Bento Grid Case Studies -->  
+        <section class="mb-12">  
+            <h2 class="text-2xl font-bold mb-6 text-teal-400">  
+                Wybrane Transformacje IT (STAR Framework)  
+            </h2>  
+            <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">  
+                <!-- Projekty zostaną tu wstrzyknięte dynamicznie przez JS -->  
+            </div>  
+        </section>  
+    </div>  
+  
+    <script>  
+        fetch('./projects.json')  
+            .then(response => response.json())  
+            .then(data => {  
+                const container = document.getElementById('projects-container');  
+  
+                const projects = data  
+                    .map(item => {  
+                        try {  
+                            return item.text ? JSON.parse(item.text) : item;  
+                        } catch (e) {  
+                            console.error('Nie udało się sparsować item.text:', item, e);  
+                            return null;  
+                        }  
+                    })  
+                    .filter(Boolean)  
+                    .filter(project =>  
+                        project.title &&  
+                        !project.title.toLowerCase().includes('brak danych wejściowych') &&  
+                        !(project.action || '').includes('{{ $json.description }}')  
+                    );  
+  
+                if (projects.length === 0) {  
+                    container.innerHTML = `  
+                        <div class="col-span-2 text-center text-slate-500 py-12 border border-dashed border-slate-800 rounded-2xl">  
+                            Brak poprawnych projektów do wyświetlenia.  
+                        </div>  
+                    `;  
+                    return;  
+                }  
+  
+                container.innerHTML = projects.map(project => `  
+                    <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-xl flex flex-col justify-between">  
+                        <div>  
+                            <span class="text-xs font-semibold text-teal-400 tracking-wider uppercase">  
+                                ${project.tag || ''}  
+                            </span>  
+                            <h3 class="text-xl font-bold mt-2 mb-4">  
+                                ${project.title || 'Bez tytułu'}  
+                            </h3>  
+                            <div class="space-y-3 text-sm text-slate-300">  
+                                <p><strong>Situation:</strong> ${project.situation || 'Brak danych'}</p>  
+                                <p><strong>Task:</strong> ${project.task || 'Brak danych'}</p>  
+                                <p><strong>Action:</strong> ${project.action || 'Brak danych'}</p>  
+                                <p><strong>Result:</strong> <span class="text-emerald-400 font-semibold">${project.result || 'Brak danych'}</span></p>  
+                            </div>  
+                        </div>  
+                        <div class="mt-6 pt-4 border-t border-slate-800 text-xs text-slate-500 flex justify-between gap-4">  
+                            <span>Narzędzia: ${project.tools || 'Brak danych'}</span>  
+                            <span>Zautomatyzowane przez n8n</span>  
+                        </div>  
+                    </div>  
+                `).join('');  
+            })  
+            .catch(err => {  
+                console.error('Błąd pobierania projektów:', err);  
+                const container = document.getElementById('projects-container');  
+                container.innerHTML = `  
+                    <div class="col-span-2 text-center text-red-400 py-12 border border-dashed border-red-900 rounded-2xl">  
+                        Nie udało się załadować projektów.  
+                    </div>  
+                `;  
+            });  
+    </script>  
+</body>  
+</html>  
