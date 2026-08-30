@@ -124,11 +124,16 @@ h2 {
   letter-spacing: -0.04em;  
 }  
   
+h3 {  
+  margin: 0 0 10px;  
+}  
+  
 .hero-text,  
 .section-text,  
 .project-card p,  
 .info-card p,  
-.contact-text {  
+.contact-text,  
+.timeline-card p {  
   color: var(--muted);  
   line-height: 1.75;  
   font-size: 17px;  
@@ -182,7 +187,8 @@ h2 {
   
 .info-card,  
 .project-card,  
-.contact-box {  
+.contact-box,  
+.timeline-card {  
   background: var(--panel);  
   border: 1px solid var(--line);  
   border-radius: var(--radius);  
@@ -234,7 +240,6 @@ h2 {
 }  
   
 .project-card h3 {  
-  margin: 0 0 10px;  
   font-size: 22px;  
   letter-spacing: -0.03em;  
 }  
@@ -255,6 +260,52 @@ h2 {
   
 .project-links a {  
   color: var(--primary);  
+  font-weight: 600;  
+}  
+  
+.timeline {  
+  display: grid;  
+  gap: 18px;  
+}  
+  
+.timeline-item {  
+  display: grid;  
+  grid-template-columns: 190px 1fr;  
+  gap: 20px;  
+  align-items: start;  
+}  
+  
+.timeline-date {  
+  color: var(--accent);  
+  font-size: 14px;  
+  font-weight: 700;  
+  letter-spacing: 0.04em;  
+  text-transform: uppercase;  
+  padding-top: 20px;  
+}  
+  
+.timeline-card {  
+  padding: 22px;  
+}  
+  
+.timeline-card h3 {  
+  font-size: 22px;  
+  letter-spacing: -0.03em;  
+}  
+  
+.tag-list {  
+  display: flex;  
+  flex-wrap: wrap;  
+  gap: 12px;  
+}  
+  
+.tag {  
+  padding: 10px 14px;  
+  border-radius: 999px;  
+  border: 1px solid var(--line);  
+  background: rgba(255, 255, 255, 0.04);  
+  color: var(--text);  
+  font-size: 14px;  
   font-weight: 600;  
 }  
   
@@ -288,7 +339,8 @@ h2 {
   .hero-grid,  
   .section-grid,  
   .projects-grid,  
-  .section-heading {  
+  .section-heading,  
+  .timeline-item {  
     grid-template-columns: 1fr;  
     display: grid;  
   }  
@@ -296,12 +348,18 @@ h2 {
   .section-heading {  
     align-items: start;  
   }  
+  
+  .timeline-date {  
+    padding-top: 0;  
+  }  
 }  
   
 @media (max-width: 700px) {  
   .menu {  
     gap: 14px;  
     font-size: 14px;  
+    flex-wrap: wrap;  
+    justify-content: flex-end;  
   }  
   
   .hero {  
@@ -320,4 +378,10 @@ h2 {
   .nav {  
     min-height: 68px;  
   }  
-}  
+  
+  .project-card,  
+  .info-card,  
+  .timeline-card {  
+    padding: 20px;  
+  }  
+} 
