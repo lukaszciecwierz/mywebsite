@@ -1,20 +1,23 @@
-[
-  {
-    "title": "Transformacja IT/OT i Cyberbezpieczeństwa",
-    "tag": "IT transformation",
-    "situation": "Organizacja licząca ponad 200 pracowników, działająca w sektorach FMCG, finansowym i produkcyjnym, realizowała złożone programy modernizacji IT o łącznym budżecie przekraczającym 50 mln PLN. Środowisko obejmowało infrastrukturę IT/OT, wymagania post-M&A, migrację do chmury, rozwój hurtowni danych, wdrożenia ERP oraz dostosowanie do wymagań regulacyjnych i norm bezpieczeństwa.",
-    "task": "Zapewnienie ciągłości procesów produkcyjnych, wysokiego poziomu cyberbezpieczeństwa oraz wzrostu satysfakcji użytkowników przy jednoczesnym zarządzaniu interdyscyplinarnymi zespołami liczącymi ponad 100 FTE.",
-    "action": "Prowadzono rozwój hurtowni danych, wdrożenia systemów ERP oraz architektury bezpieczeństwa zgodnej z NIST, NIS2, GDPR i DORA. Nadzorowano rozwój i utrzymanie środowisk IT/OT, realizowano działania R&D dla grupy kapitałowej oraz wdrażano rozwiązania z zakresu automatyzacji i sztucznej inteligencji w celu optymalizacji procesów i wsparcia wzrostu przychodów.",
-    "result": "W ostatnim roku osiągnięto wzrost CSAT o 10%, jednocześnie skutecznie realizując programy transformacyjne o dużej skali budżetowej i organizacyjnej oraz wzmacniając ciągłość operacyjną i zgodność regulacyjną.",
-    "tools": "ERP, hurtownia danych, chmura, IT/OT, NIST, NIS2, GDPR, DORA, automatyzacja, sztuczna inteligencja"
-  },
-  {
-    "title": "Transformacja IT/OT i Cyberbezpieczeństwa",
-    "tag": "IT transformation",
-    "situation": "Organizacja licząca ponad 200 pracowników, działająca w sektorach FMCG, finansowym i produkcyjnym, realizowała złożone programy modernizacji IT o łącznym budżecie przekraczającym 50 mln PLN. Środowisko obejmowało infrastrukturę IT/OT, wymagania post-M&A, migrację do chmury, rozwój hurtowni danych, wdrożenia ERP oraz dostosowanie do wymagań regulacyjnych i norm bezpieczeństwa.",
-    "task": "Zapewnienie ciągłości procesów produkcyjnych, wysokiego poziomu cyberbezpieczeństwa oraz wzrostu satysfakcji użytkowników przy jednoczesnym zarządzaniu interdyscyplinarnymi zespołami liczącymi ponad 100 FTE.",
-    "action": "Prowadzono rozwój hurtowni danych, wdrożenia systemów ERP oraz architektury bezpieczeństwa zgodnej z NIST, NIS2, GDPR i DORA. Nadzorowano rozwój i utrzymanie środowisk IT/OT, realizowano działania R&D dla grupy kapitałowej oraz wdrażano rozwiązania z obszaru automatyzacji i sztucznej inteligencji w celu optymalizacji procesów i wsparcia wzrostu przychodów.",
-    "result": "W ostatnim roku osiągnięto wzrost CSAT o 10%, jednocześnie skutecznie realizując programy transformacyjne o dużej skali budżetowej i organizacyjnej.",
-    "tools": "ERP, hurtownia danych, chmura, IT/OT, NIST, NIS2, GDPR, DORA, automatyzacja, sztuczna inteligencja"
-  }
-]
+[  
+  {  
+    "title": "Personal Portfolio Website",  
+    "description": "A premium-style portfolio website focused on clean layout, responsive design and strong personal branding.",  
+    "stack": "HTML · CSS · JavaScript · Azure Static Web Apps",  
+    "url": "https://example.com",  
+    "github": "https://github.com/"  
+  },  
+  {  
+    "title": "Service Landing Page",  
+    "description": "A modern corporate landing page designed to present services clearly and improve client trust.",  
+    "stack": "HTML · CSS · Responsive Design",  
+    "url": "https://example.com",  
+    "github": "https://github.com/"  
+  },  
+  {  
+    "title": "Automation Workflow",  
+    "description": "A lightweight automation flow for updating website content dynamically using JSON and GitHub API.",  
+    "stack": "n8n · GitHub API · JSON",  
+    "url": "",  
+    "github": "https://github.com/"  
+  }  
+]  
