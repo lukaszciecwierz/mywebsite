@@ -1,97 +1,150 @@
 <!DOCTYPE html>  
-<html lang="pl">  
+<html lang="en">  
 <head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>CIO Portfolio - Cloud & AI Lab</title>  
-    <script src="https://cdn.tailwindcss.com"></script>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+  
+  <title>Łukasz | Premium Websites & Automation</title>  
+  <meta  
+    name="description"  
+    content="Professional websites, portfolio solutions and smart automations. Modern digital presence for ambitious brands."  
+  />  
+  
+  <meta property="og:title" content="Łukasz | Premium Websites & Automation" />  
+  <meta  
+    property="og:description"  
+    content="Professional websites, portfolio solutions and smart automations."  
+  />  
+  <meta property="og:type" content="website" />  
+  <meta property="og:image" content="/og-image.jpg" />  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />  
+  <link  
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"  
+    rel="stylesheet"  
+  />  
+  
+  <link rel="stylesheet" href="/style.css" />  
 </head>  
-<body class="bg-slate-950 text-slate-100 font-sans min-h-screen">  
-    <div class="max-w-5xl mx-auto px-6 py-12">  
-        <!-- Header / Hero Section -->  
-        <header class="mb-16 text-center lg:text-left">  
-            <h1 class="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-teal-400 to-cyan-500 bg-clip-text text-transparent">  
-                Łukasz | CIO & IT Executive  
-            </h1>  
-            <p class="mt-4 text-lg text-slate-400 max-w-2xl">  
-                Projektuję i wdrażam nowoczesne architektury chmurowe oraz systemy orkiestracji AI, które automatyzują procesy biznesowe i eliminują dług technologiczny.  
-            </p>  
-        </header>  
+<body>  
+  <header class="site-header">  
+    <div class="container nav">  
+      <a href="#" class="brand">  
+        <span class="brand-mark"></span>  
+        <span>Łukasz</span>  
+      </a>  
   
-        <!-- Bento Grid Case Studies -->  
-        <section class="mb-12">  
-            <h2 class="text-2xl font-bold mb-6 text-teal-400">  
-                Wybrane Transformacje IT (STAR Framework)  
-            </h2>  
-            <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">  
-                <!-- Projekty zostaną tu wstrzyknięte dynamicznie przez JS -->  
-            </div>  
-        </section>  
+      <nav class="menu">  
+        <a href="#about">About</a>  
+        <a href="#projects">Projects</a>  
+        <a href="#contact">Contact</a>  
+      </nav>  
     </div>  
+  </header>  
   
-    <script>  
-        fetch('./projects.json')  
-            .then(response => response.json())  
-            .then(data => {  
-                const container = document.getElementById('projects-container');  
+  <main>  
+    <section class="hero">  
+      <div class="container hero-grid">  
+        <div class="hero-content">  
+          <p class="hero-label">Portfolio · Services · Premium Digital Presence</p>  
+          <h1>  
+            I create modern websites and polished digital experiences for ambitious brands.  
+          </h1>  
+          <p class="hero-text">  
+            Clean design, strong presentation and lightweight technology —  
+            built to look professional, load fast and grow with your business.  
+          </p>  
   
-                const projects = data  
-                    .map(item => {  
-                        try {  
-                            return item.text ? JSON.parse(item.text) : item;  
-                        } catch (e) {  
-                            console.error('Nie udało się sparsować item.text:', item, e);  
-                            return null;  
-                        }  
-                    })  
-                    .filter(Boolean)  
-                    .filter(project =>  
-                        project.title &&  
-                        !project.title.toLowerCase().includes('brak danych wejściowych') &&  
-                        !(project.action || '').includes('{{ $json.description }}')  
-                    );  
+          <div class="hero-actions">  
+            <a href="#projects" class="btn btn-primary">View Projects</a>  
+            <a href="#contact" class="btn btn-secondary">Get in Touch</a>  
+          </div>  
+        </div>  
   
-                if (projects.length === 0) {  
-                    container.innerHTML = `  
-                        <div class="col-span-2 text-center text-slate-500 py-12 border border-dashed border-slate-800 rounded-2xl">  
-                            Brak poprawnych projektów do wyświetlenia.  
-                        </div>  
-                    `;  
-                    return;  
-                }  
+        <div class="hero-panel">  
+          <div class="info-card">  
+            <span class="info-title">Professional Design</span>  
+            <p>Minimal, premium and corporate-friendly visual direction.</p>  
+          </div>  
+          <div class="info-card">  
+            <span class="info-title">Modern Stack</span>  
+            <p>Fast static deployment, scalable structure and easy updates.</p>  
+          </div>  
+          <div class="info-card">  
+            <span class="info-title">Business Ready</span>  
+            <p>Perfect for portfolio, services, offers and digital presentation.</p>  
+          </div>  
+        </div>  
+      </div>  
+    </section>  
   
-                container.innerHTML = projects.map(project => `  
-                    <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-xl flex flex-col justify-between">  
-                        <div>  
-                            <span class="text-xs font-semibold text-teal-400 tracking-wider uppercase">  
-                                ${project.tag || ''}  
-                            </span>  
-                            <h3 class="text-xl font-bold mt-2 mb-4">  
-                                ${project.title || 'Bez tytułu'}  
-                            </h3>  
-                            <div class="space-y-3 text-sm text-slate-300">  
-                                <p><strong>Situation:</strong> ${project.situation || 'Brak danych'}</p>  
-                                <p><strong>Task:</strong> ${project.task || 'Brak danych'}</p>  
-                                <p><strong>Action:</strong> ${project.action || 'Brak danych'}</p>  
-                                <p><strong>Result:</strong> <span class="text-emerald-400 font-semibold">${project.result || 'Brak danych'}</span></p>  
-                            </div>  
-                        </div>  
-                        <div class="mt-6 pt-4 border-t border-slate-800 text-xs text-slate-500 flex justify-between gap-4">  
-                            <span>Narzędzia: ${project.tools || 'Brak danych'}</span>  
-                            <span>Zautomatyzowane przez n8n</span>  
-                        </div>  
-                    </div>  
-                `).join('');  
-            })  
-            .catch(err => {  
-                console.error('Błąd pobierania projektów:', err);  
-                const container = document.getElementById('projects-container');  
-                container.innerHTML = `  
-                    <div class="col-span-2 text-center text-red-400 py-12 border border-dashed border-red-900 rounded-2xl">  
-                        Nie udało się załadować projektów.  
-                    </div>  
-                `;  
-            });  
-    </script>  
+    <section id="about" class="section">  
+      <div class="container section-grid">  
+        <div>  
+          <p class="section-kicker">About</p>  
+          <h2>Built with clarity, performance and trust in mind.</h2>  
+        </div>  
+        <div>  
+          <p class="section-text">  
+            I design and build professional websites that combine elegant visuals  
+            with practical structure. My focus is on premium presentation,  
+            clear messaging and lightweight implementation that is easy to maintain.  
+          </p>  
+          <p class="section-text">  
+            Whether you need a polished personal portfolio, a modern service page  
+            or a clean corporate-style website, I help turn the idea into a solid digital product.  
+          </p>  
+        </div>  
+      </div>  
+    </section>  
+  
+    <section id="projects" class="section section-projects">  
+      <div class="container">  
+        <div class="section-heading">  
+          <div>  
+            <p class="section-kicker">Projects</p>  
+            <h2>Selected work</h2>  
+          </div>  
+          <p class="section-text small">  
+            A selection of website and digital projects loaded dynamically from JSON.  
+          </p>  
+        </div>  
+  
+        <div id="projects-grid" class="projects-grid"></div>  
+      </div>  
+    </section>  
+  
+    <section id="contact" class="section">  
+      <div class="container">  
+        <div class="contact-box">  
+          <p class="section-kicker">Contact</p>  
+          <h2>Let’s build something professional.</h2>  
+          <p class="section-text contact-text">  
+            If you need a premium website, elegant portfolio or modern service page,  
+            feel free to reach out.  
+          </p>  
+  
+          <div class="contact-actions">  
+            <a class="btn btn-primary" href="mailto:twojmail@example.com">twojmail@example.com</a>  
+            <a class="btn btn-secondary" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>  
+          </div>  
+        </div>  
+      </div>  
+    </section>  
+  </main>  
+  
+  <footer class="site-footer">  
+    <div class="container footer-inner">  
+      <p>© 2026 Łukasz. All rights reserved.</p>  
+      <div class="footer-links">  
+        <a href="#about">About</a>  
+        <a href="#projects">Projects</a>  
+        <a href="#contact">Contact</a>  
+      </div>  
+    </div>  
+  </footer>  
+  
+  <script src="/script.js"></script>  
 </body>  
 </html>  
