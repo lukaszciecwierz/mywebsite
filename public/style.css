@@ -1,0 +1,795 @@
+/* ==========================================================================
+   PORTFOLIO DESIGN SYSTEM & CSS FRAMEWORK (IT Executive Edition)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+    --bg: #0B0F19;
+    --card-bg: #131B2E;
+    --border: #222F43;
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --accent: #38BDF8;
+    --accent-hover: #0EA5E9;
+    --accent-rgb: 56, 189, 248;
+    --success: #00E676;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+/* Layout Framework */
+.portfolio-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Left Sticky Sidebar */
+.left-sidebar {
+    width: 42%;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding: 5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+}
+
+.left-sidebar::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for sidebar */
+}
+
+/* Hero Info */
+.profile-info h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, #FFF 40%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.profile-info h2 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-mono);
+}
+
+.tagline-lead {
+    font-size: 1.15rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.bio-brief {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    max-width: 90%;
+    margin-bottom: 2rem;
+}
+
+/* Navigation Menu */
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: var(--transition);
+}
+
+.nav-item .line {
+    width: 24px;
+    height: 1px;
+    background-color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.nav-item:hover, .nav-item.active {
+    color: var(--text-primary);
+    transform: translateX(8px);
+}
+
+.nav-item:hover .line, .nav-item.active .line {
+    width: 48px;
+    background-color: var(--accent);
+}
+
+/* Executive KPI Grid */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: auto;
+}
+
+.kpi-card {
+    background: rgba(19, 27, 46, 0.4);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: var(--transition);
+}
+
+.kpi-card:hover {
+    border-color: rgba(56, 189, 248, 0.4);
+    background: rgba(19, 27, 46, 0.8);
+    transform: translateY(-2px);
+}
+
+.kpi-number {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+}
+
+.kpi-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.25rem;
+}
+
+/* Action Buttons & Lang Selector */
+.sidebar-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3rem;
+    gap: 1.5rem;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--accent);
+    color: var(--bg);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.cta-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+}
+
+.lang-switch {
+    display: flex;
+    gap: 0.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 0.4rem;
+    border-radius: 8px;
+}
+
+.lang-btn {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.lang-btn.active {
+    background: var(--border);
+    color: var(--text-primary);
+}
+
+/* Right Content Area */
+.right-content {
+    width: 58%;
+    padding: 5rem 6rem;
+}
+
+/* Sections Base Styling */
+section {
+    margin-bottom: 6rem;
+    scroll-margin-top: 5rem;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.section-title::after {
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+/* Bento Box Grid (Capabilities & About) */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.bento-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.bento-card.full-width {
+    grid-column: span 2;
+}
+
+.bento-card:hover {
+    border-color: rgba(56, 189, 248, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px -15px rgba(2, 6, 23, 0.7);
+}
+
+.bento-num {
+    font-family: var(--font-mono);
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.bento-card h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.bento-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Experience / Work History Timeline */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.timeline-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: var(--transition);
+    display: flex;
+    gap: 1.5rem;
+}
+
+.timeline-item:hover {
+    border-color: rgba(56, 189, 248, 0.3);
+    transform: translateX(4px);
+}
+
+.company-logo-wrapper {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-body {
+    flex-grow: 1;
+}
+
+.timeline-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-role {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.timeline-company {
+    font-size: 1rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-top: 0.15rem;
+}
+
+.timeline-date {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    background: rgba(34, 47, 67, 0.4);
+    padding: 0.25rem 0.75rem;
+    border-radius: 30px;
+    border: 1px solid var(--border);
+}
+
+.timeline-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+}
+
+.timeline-desc ul {
+    list-style: none;
+    margin-top: 0.5rem;
+}
+
+.timeline-desc li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.4rem;
+}
+
+.timeline-desc li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    background: rgba(56, 189, 248, 0.08);
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+/* Certifications Badges */
+.certs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+.cert-badge {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: var(--transition);
+}
+
+.cert-badge:hover {
+    border-color: rgba(56, 189, 248, 0.3);
+    transform: translateY(-2px);
+}
+
+.cert-icon {
+    flex-shrink: 0;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--border);
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cert-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* Tech Capabilities */
+.tech-icons-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.tech-pill {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.tech-pill:hover {
+    border-color: var(--accent);
+    transform: scale(1.03);
+}
+
+.tech-pill svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Speaking Events */
+.speaking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.speaking-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.speaking-card:hover {
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+.speaking-card h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.speaking-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.speaking-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: var(--transition);
+}
+
+.speaking-link:hover {
+    color: var(--text-primary);
+}
+
+/* Testimonials Carousel / Scroll Stack */
+.recommendations {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.recommendation-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+}
+
+.rec-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.rec-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.rec-avatar {
+    width: 44px;
+    height: 44px;
+    background: var(--accent);
+    color: var(--bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.rec-author-info h6 {
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.rec-author-info p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (Adaptive Breakpoints)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .portfolio-container {
+        flex-direction: column;
+    }
+    
+    .left-sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 3rem 2rem;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+    
+    .right-content {
+        width: 100%;
+        padding: 3rem 2rem;
+    }
+    
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bento-card.full-width {
+        grid-column: span 1;
+    }
+    
+    .certs-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   WEB-TO-PRINT ENGINE CRITICAL STYLESHEET OVERRIDES (@media print)
+   ========================================================================== */
+@media print {
+    body {
+        background: #FFF !important;
+        color: #000 !important;
+        font-size: 10pt !important;
+        font-family: "Calibri", "Arial", "Helvetica", sans-serif !important;
+        line-height: 1.4 !important;
+    }
+
+    .portfolio-container {
+        display: block !important;
+        max-width: 100% !important;
+    }
+
+    .left-sidebar {
+        width: 100% !important;
+        height: auto !important;
+        position: static !important;
+        padding: 0 !important;
+        border-right: none !important;
+        border-bottom: 1px solid #CCC !important;
+        margin-bottom: 20pt !important;
+    }
+
+    .nav-links, .lang-switch, .cta-btn, .kpi-grid, .speaking-link {
+        display: none !important;
+    }
+
+    .profile-info h1 {
+        color: #000 !important;
+        background: none !important;
+        -webkit-text-fill-color: initial !important;
+        font-size: 24pt !important;
+    }
+
+    .profile-info h2 {
+        color: #555 !important;
+        font-size: 13pt !important;
+        margin-bottom: 5pt !important;
+    }
+
+    .tagline-lead {
+        color: #000 !important;
+        font-size: 11pt !important;
+        font-weight: bold !important;
+    }
+
+    .right-content {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    section {
+        margin-bottom: 25pt !important;
+        page-break-inside: avoid !important;
+    }
+
+    .section-title {
+        font-size: 13pt !important;
+        color: #000 !important;
+        border-bottom: 1.5pt solid #000 !important;
+        padding-bottom: 3pt !important;
+        margin-bottom: 12pt !important;
+    }
+
+    .section-title::after {
+        display: none !important;
+    }
+
+    .bento-grid {
+        display: block !important;
+    }
+
+    .bento-card {
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin-bottom: 10pt !important;
+    }
+
+    .timeline {
+        gap: 15pt !important;
+    }
+
+    .timeline-item {
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin-bottom: 12pt !important;
+        display: block !important;
+    }
+
+    .company-logo-wrapper {
+        display: none !important;
+    }
+
+    .timeline-meta {
+        margin-bottom: 3pt !important;
+    }
+
+    .timeline-role {
+        font-size: 11pt !important;
+        font-weight: bold !important;
+    }
+
+    .timeline-company {
+        font-size: 10pt !important;
+        color: #333 !important;
+    }
+
+    .timeline-date {
+        font-size: 9pt !important;
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        color: #555 !important;
+    }
+
+    .timeline-desc {
+        color: #333 !important;
+    }
+
+    .timeline-desc li::before {
+        content: "•" !important;
+        color: #000 !important;
+    }
+
+    .tech-tags, .tech-icons-grid, .certs-grid {
+        display: block !important;
+        margin-top: 5pt !important;
+    }
+
+    .tag, .tech-pill {
+        display: inline !important;
+        background: none !important;
+        border: none !important;
+        color: #000 !important;
+        padding: 0 !important;
+        margin-right: 8pt !important;
+        font-size: 9pt !important;
+    }
+
+    .tech-pill svg, .cert-icon {
+        display: none !important;
+    }
+
+    .cert-badge {
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin-bottom: 5pt !important;
+        display: block !important;
+    }
+
+    a[href^="http"]:after {
+        content: " (" attr(href) ")" !important;
+        font-size: 8pt !important;
+        color: #555 !important;
+        font-weight: normal !important;
+    }
+}
