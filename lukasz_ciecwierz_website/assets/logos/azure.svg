@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="72" viewBox="0 0 180 72" role="img" aria-labelledby="t">
-<title id="t">Microsoft Azure</title>
-<rect x="1" y="1" width="178" height="70" rx="16" fill="#0f172a" stroke="#334155"/>
-<circle cx="34" cy="36" r="21" fill="#0078D4"/>
-<text x="34" y="41" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="14" fill="white">AZ</text>
-<text x="64" y="41" font-family="Arial,sans-serif" font-weight="700" font-size="14" fill="#eaf2ff">Microsoft Azure</text>
-</svg>

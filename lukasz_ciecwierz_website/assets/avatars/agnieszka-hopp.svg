@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img" aria-labelledby="title">
-<title id="title">Agnieszka Hopp</title>
-<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs>
-<circle cx="80" cy="80" r="78" fill="#0f172a" stroke="#334155" stroke-width="4"/>
-<circle cx="80" cy="80" r="62" fill="url(#g)"/>
-<text x="80" y="94" text-anchor="middle" font-family="Arial,sans-serif" font-size="44" font-weight="800" fill="#04111e">AH</text>
-</svg>
