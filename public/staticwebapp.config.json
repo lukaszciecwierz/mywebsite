@@ -1,0 +1,25 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": [
+      "/en/*",
+      "/pl/*",
+      "/data/*",
+      "*.css",
+      "*.js",
+      "*.json",
+      "*.jpg",
+      "*.jpeg",
+      "*.png",
+      "*.webp",
+      "*.svg",
+      "*.xml",
+      "*.txt"
+    ]
+  },
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+  }
+}
