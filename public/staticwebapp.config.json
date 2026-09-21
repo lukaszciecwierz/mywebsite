@@ -11,6 +11,11 @@
       "*.txt"
     ]
   },
+  "forwardingGateway": {
+    "allowedForwardedHosts": [
+      "ep-lukasz-bnbvg8cfbzgegkav.a03.azurefd.net"
+    ]
+  },
   "globalHeaders": {
     "X-Content-Type-Options": "nosniff",
     "Referrer-Policy": "strict-origin-when-cross-origin",
