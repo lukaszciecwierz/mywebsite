@@ -13,7 +13,9 @@
   },
   "forwardingGateway": {
     "allowedForwardedHosts": [
-      "ep-lukasz-bnbvg8cfbzgegkav.a03.azurefd.net"
+      "ep-lukasz-bnbvg8cfbzgegkav.a03.azurefd.net",
+      "www.lukaszciecwierz.pl",
+      "lukaszciecwierz.pl"
     ]
   },
   "globalHeaders": {
